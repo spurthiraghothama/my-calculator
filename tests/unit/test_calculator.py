@@ -2,21 +2,24 @@
 Unit Tests for Calculator
 Students start with 2 passing tests, then add more
 """
+
 import pytest
 from src.calculator import add, divide, subtract, multiply, power, square_root
 
+
 class TestBasicOperations:
     """Test basic arithmetic operations"""
-    
+
     def test_add_positive_numbers(self):
         """Test adding positive numbers"""
         assert add(2, 3) == 5
         assert add(10, 15) == 25
-    
+
     def test_subtract_positive_numbers(self):
         """Test subtracting positive numbers"""
         assert subtract(5, 3) == 2
         assert subtract(10, 4) == 6
+
     def test_add_negative_numbers(self):
         """Test adding negative numbers"""
         assert add(-1, -1) == -2
@@ -26,6 +29,7 @@ class TestBasicOperations:
         """Test subtracting negative numbers"""
         assert subtract(-1, -1) == 0
         assert subtract(-5, -3) == -2
+
 
 class TestAdvancedOperations:
     """Test power and square root operations"""
@@ -49,10 +53,13 @@ class TestAdvancedOperations:
     def test_square_root_negative_raises_error(self):
         """Test that square root of negative raises ValueError"""
 
-        with pytest.raises(ValueError, match="Cannot calculate square root of negative"):
+        with pytest.raises(
+            ValueError, match="Cannot calculate square root of negative"
+        ):
 
             square_root(-4)
-    
+
+
 # TODO: Students will add TestMultiplyDivide class
 class TestMultiplyDivide:
     """Test multiplication and division operations"""
